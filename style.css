@@ -44,3 +44,10 @@ body{
                 inset 0 2px 8px rgba(0,0,0,0.1),
                 inset 0 -4px 4px rgba(0,0,0,0.1),
 }
+.checkbox:checked::before{
+    left: 160px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1),
+                inset 4px 4px rgba(255, 255, 255,1),
+                inset -4px 4px rgba(255, 255, 255,1);
+    background: linear-gradient(to bottom, #eaeaea, #f9f9f9);
+}
