@@ -23,3 +23,16 @@ body{
     cursor: pointer;
     transition: 0.5s;   
 }
+.checkbox::before{
+    height: 160px;
+    width: 160px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    background: linear-gradient(to bottom, #444, #222);
+    border-radius: 160px;
+    transform: scale(0.9);
+    transition: 0.5s;
+    box-shadow:0 8px 40px rgba(0,0,0,0.5) ;
+}
