@@ -63,3 +63,6 @@ body{
     transform: translate(-50%, -50%);
     transition: 0.5s;
 }
+.checkbox:checked::after{
+    background: #f8f8f8;
+}
