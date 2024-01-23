@@ -7,12 +7,18 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="toggle-box">
-    <input type="checkbox" class="checkbox">
+    <div id="toggle">
+            <i class="checkbox"></i>
     </div>
-    
-    <footer>
-        <p> Created by <a href="https://satyasaadhika.github.io/" target="_blank">Priyanshu Maurya</a>| |&copy; 2024 All rights reserved.</p>
-    </footer>
-</body>
+
+    </body>
+
+    <script>
+        const body = document.querySelector('body');
+        const toggle = document.getElementById('toggle');
+        toggle.onclick = function(){
+            toggle.classList.toggle('active')
+            body.classList.toggle('active')
+        }
+    </script>
 </html>

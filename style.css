@@ -3,27 +3,38 @@
     padding: 0;
     box-sizing: border-box;
 }
-.toggle-box{
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    height: 100vh;
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #2b2b2b;
+ /* transition: 0.5s;*/
 }
-.checkbox{
+body.active{
+    background: #f8f8f8;
+}
+#toggle{
     height: 160px;
     width: 320px;
     background: #222;
     appearance: none;
     border-radius: 160px;
-    box-shadow: inset 0 8px 60px rgba(0,0,0,0,1),
-                inset 0 8px 8px rgba(0,0,0,0,1),
-                inset 0 -4px 4px rgba(0,0,0,0,1);
+    box-shadow: inset 0 8px 60px rgba(0,0,0,0.1),
+                inset 0 8px 8px rgba(0,0,0,0.1),
+                inset 0 -4px 4px rgba(0,0,0,0.1);
     position: relative;
     outline: none;
     cursor: pointer;
     transition: 0.5s;   
 }
-.checkbox::before{
+#toggle.active{
+    background: #fff;
+    box-shadow: inset 0 2px 60px rgba(0,0,0,0.1),
+                inset 0 2px 8px rgba(0,0,0,0.1),
+                inset 0 -4px 8px rgba(0,0,0,0.05);
+}
+#toggle .checkbox{
     height: 160px;
     width: 160px;
     position: absolute;
@@ -31,62 +42,18 @@
     left: 0;
     content: "";
     background: linear-gradient(to bottom, #444, #222);
-    border-radius: 160px;
+    border-radius: 50%;
     transform: scale(0.9);
     transition: 0.5s;
     box-shadow:0 8px 40px rgba(0,0,0,0.5),
-               inset 4px 4px rgba(255, 255, 255,0.2),   
-               inset -4px 4px rgba(255, 255, 255,0.2)  
+               inset 0 4px 4px rgba(255, 255, 255,0.2),   
+               inset 0 -4px 4px rgba(255, 255, 255,0.2); 
 }
-.checkbox:checked{
-    background: #fff;
-    box-shadow: inset 0 2px 60px rgba(0,0,0,0.1),
-                inset 0 2px 8px rgba(0,0,0,0.1),
-                inset 0 -4px 4px rgba(0,0,0,0.1),
-}
-.checkbox:checked::before{
+#toggle.active .checkbox{
     left: 160px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1),
-                inset 4px 4px rgba(255, 255, 255,1),
-                inset -4px 4px rgba(255, 255, 255,1);
     background: linear-gradient(to bottom, #eaeaea, #f9f9f9);
+    box-shadow:0 8px 20px rgba(0,0,0,0.1),
+    inset 0 4px 4px rgba(255, 255, 255,1),   
+    inset 0 -4px 4px rgba(255, 255, 255,1); 
 }
-.checkbox::after{
-    content: "";
-    position: absolute;
-    height: 100vh;
-    width: 210vh;
-    background: #2b2b2b;
-    top: 80px;
-    left: 160px;
-    z-index: -1;
-    transform: translate(-50%, -50%);
-    transition: 0.5s;
-}
-.checkbox:checked::after{
-    background-size: cover;
-    background: #f8f8f8;
-}
-footer{
-    background-color: rgb(203, 162, 108);
-    text-align: center;
-    padding: 26px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-footer p{
-    font-size: 1.2rem;
-  }
-  
-footer a {
-    color: rgb(16, 47, 159);
-    text-decoration: none;
-  }
-  
-  /*For Responsiveness*/
-@media only screen and (max-width: 367px) {
-    footer {
-    background-color: aquamarine;
-    }
-    
-  }
 
